@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#10131e" />
+  <title>Last Corridor — a skeleton showdown</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">♥</span><span>UNDERGROUND<span class="brand-sub"> / LAST CORRIDOR</span></span></div>
+      <div class="round-pill"><span class="live-dot"></span><span id="round-label">ENCOUNTER 01</span></div>
+    </header>
+
+    <section class="game-card" aria-label="Sans battle game">
+      <div class="scene-head">
+        <div class="eyebrow"><span class="spark">✦</span> THE JUDGE IS WAITING</div>
+        <div class="encounter-title"><h1>One last <em>stand.</em></h1><p>Dodge the bones. Choose your way out.</p></div>
+        <div class="enemy-tag"><span class="skull-icon">☠</span><span><b>SANS</b><small>LV 1 · THE SLEEPY GUARD</small></span></div>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="game" width="1000" height="520" aria-label="Battlefield. Use arrow keys or WASD to move." tabindex="0"></canvas>
+        <div class="canvas-hint" id="canvas-hint">MOVE <kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd> <span>·</span> CONFIRM <kbd>ENTER</kbd></div>
+      </div>
+      <div class="battle-footer">
+        <div class="status-row">
+          <div class="player-id"><span class="mini-heart">♥</span><span>HUMAN</span><b>LV 1</b></div>
+          <div class="hp-block"><div class="hp-label"><span>HP</span><strong id="hp-text">20 / 20</strong></div><div class="hp-track"><div id="hp-fill"></div></div></div>
+          <div class="quip" id="quip">A strange calm settles over the corridor.</div>
+        </div>
+        <nav class="actions" id="actions" aria-label="Battle actions">
+          <button class="action fight selected" data-action="fight"><span class="action-icon">⚔</span>FIGHT</button>
+          <button class="action act" data-action="act"><span class="action-icon">◉</span>ACT</button>
+          <button class="action item" data-action="item"><span class="action-icon">✚</span>ITEM</button>
+          <button class="action mercy" data-action="mercy"><span class="action-icon">♡</span>MERCY</button>
+        </nav>
+        <div class="mobile-pad" id="mobile-pad" aria-label="Touch movement controls">
+          <span class="pad-label">MOVE</span><button data-dir="up" aria-label="Move up">▲</button><div class="pad-middle"><button data-dir="left" aria-label="Move left">◀</button><button data-dir="down" aria-label="Move down">▼</button><button data-dir="right" aria-label="Move right">▶</button></div>
+        </div>
+      </div>
+      <footer class="game-foot"><span>✦ A tiny tribute to a very big skeleton.</span><button id="sound-toggle" aria-pressed="false">SOUND <span>OFF</span></button></footer>
+    </section>
+    <p class="fine-print">A fan-made, original mini battle · No downloads or extra lives required</p>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
